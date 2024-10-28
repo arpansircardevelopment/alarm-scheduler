@@ -1,14 +1,17 @@
 package com.example.alarm_scheduler.view.activity
 
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.alarm_scheduler.R
 import com.example.alarm_scheduler.databinding.ActivityMainBinding
 import com.example.alarm_scheduler.model.repository.MainRepository
 import com.example.alarm_scheduler.model.room.AlarmDao
 import com.example.alarm_scheduler.model.room.AlarmDatabase
 import com.example.alarm_scheduler.view.picker.DatePicker
+import com.example.alarm_scheduler.view.recyclerview.AlarmListingAdapter
 import com.example.alarm_scheduler.viewmodel.MainViewModel
 import com.example.alarm_scheduler.viewmodel.factory.MainViewModelFactory
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -36,8 +39,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setObservers() {
-        viewModel?.getAlarms()?.observe(this@MainActivity) {
-            // RecyclerView Code
+        viewModel?.getAlarms()?.observe(this@MainActivity) { it ->
+            val adapter = AlarmListingAdapter(it)
+            binding.rvAlarms.apply {
+                this.adapter = adapter
+                this.layoutManager = LinearLayoutManager(this@MainActivity)
+            }
         }
     }
 
