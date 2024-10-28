@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "alarm")
 data class Alarm(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "alarm_id")
-    val id: Int,
+    val id: Int? = null,
 
     @ColumnInfo(name = "alarm_date_time")
     val dateTime: Long,
