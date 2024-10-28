@@ -4,6 +4,7 @@ import com.example.alarm_scheduler.model.room.Alarm
 import com.example.alarm_scheduler.model.room.AlarmDao
 import com.example.alarm_scheduler.model.room.AlarmDatabase
 import com.example.alarm_scheduler.utils.DateTimeUtils
+import kotlinx.coroutines.flow.Flow
 
 class MainRepository(database: AlarmDatabase) {
 
@@ -14,7 +15,7 @@ class MainRepository(database: AlarmDatabase) {
 
     suspend fun deleteAlarm(alarm: Alarm) = dao.deleteAlarm(alarm)
 
-    suspend fun getAlarms(): List<Alarm> = dao.getAllAlarms()
+    fun getAlarms(): Flow<List<Alarm>> = dao.getAllAlarms()
 
     fun getAlarmTimeInMillis(dateInMillis: Long, hour: Int, minute: Int) =
         utils.getAlarmTimeInMillis(dateInMillis, hour, minute)

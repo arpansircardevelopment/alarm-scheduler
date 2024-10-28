@@ -28,13 +28,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
 
-    override fun onStart() {
-        super.onStart()
         initializeData()
+        setObservers()
         setDatePicker()
         setListeners()
+    }
+
+    private fun setObservers() {
+        viewModel?.getAlarms()?.observe(this@MainActivity) {
+            // RecyclerView Code
+        }
     }
 
     private fun initializeData() {
