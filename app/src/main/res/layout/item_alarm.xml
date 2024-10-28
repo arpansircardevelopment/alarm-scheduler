@@ -32,14 +32,12 @@
             android:id="@+id/tv_alarm_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="08:00 am"
             android:theme="@style/RecyclerViewItemTextViewTheme.TimeTextView" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_alarm_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tuesday, 29 Oct"
             android:theme="@style/RecyclerViewItemTextViewTheme.DateTextView" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

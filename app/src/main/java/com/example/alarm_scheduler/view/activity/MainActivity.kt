@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.alarm_scheduler.R
 import com.example.alarm_scheduler.databinding.ActivityMainBinding
+import com.example.alarm_scheduler.model.callback.AlarmItemListener
 import com.example.alarm_scheduler.model.repository.MainRepository
 import com.example.alarm_scheduler.model.room.Alarm
 import com.example.alarm_scheduler.model.room.AlarmDatabase
@@ -18,7 +19,7 @@ import com.example.alarm_scheduler.viewmodel.factory.MainViewModelFactory
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AlarmItemListener {
 
     private var viewModel: MainViewModel? = null
     private lateinit var binding: ActivityMainBinding
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setObservers() {
         viewModel?.getAlarms()?.observe(this@MainActivity) {
-            val adapter = AlarmListingAdapter(it)
+            val adapter = AlarmListingAdapter(it, this@MainActivity)
             binding.rvAlarms.apply {
                 this.adapter = adapter
                 this.layoutManager = LinearLayoutManager(this@MainActivity)
@@ -104,5 +105,9 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    override fun deleteAlarm(alarm: Alarm) {
+        viewModel?.deleteAlarm(alarm)
     }
 }
