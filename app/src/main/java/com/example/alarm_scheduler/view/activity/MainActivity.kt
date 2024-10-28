@@ -1,13 +1,23 @@
 package com.example.alarm_scheduler.view.activity
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.alarm_scheduler.R
 import com.example.alarm_scheduler.databinding.ActivityMainBinding
 import com.example.alarm_scheduler.model.callback.AlarmItemListener
+import com.example.alarm_scheduler.model.constants.Constants
 import com.example.alarm_scheduler.model.repository.MainRepository
 import com.example.alarm_scheduler.model.room.Alarm
 import com.example.alarm_scheduler.model.room.AlarmDatabase

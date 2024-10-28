@@ -1,6 +1,7 @@
 package com.example.alarm_scheduler.utils
 
 import android.icu.util.Calendar
+import com.example.alarm_scheduler.model.constants.Constants
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -25,14 +26,14 @@ object DateTimeUtils {
 
     fun getDateFromMilliseconds(timeInMillis: Long): String {
         val calendar = Calendar.getInstance()
-        val dateFormat = SimpleDateFormat("EEEE, dd MMM", Locale.getDefault())
+        val dateFormat = SimpleDateFormat(Constants.DISPLAY_DATE_FORMAT, Locale.getDefault())
         calendar.timeInMillis = timeInMillis
         return dateFormat.format(calendar.time)
     }
 
     fun getTimeFromMilliseconds(timeInMillis: Long): String {
         val calendar = Calendar.getInstance()
-        val timeFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
+        val timeFormat = SimpleDateFormat(Constants.DISPLAY_TIME_FORMAT, Locale.getDefault())
         calendar.timeInMillis = timeInMillis
         return timeFormat.format(calendar.time)
     }
