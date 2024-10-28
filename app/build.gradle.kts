@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -53,5 +54,15 @@ dependencies {
 
     // Timber
     implementation(libs.timber)
+
+    // LiveData
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    // Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 
 }
