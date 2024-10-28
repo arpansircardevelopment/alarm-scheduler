@@ -4,7 +4,7 @@ import android.icu.util.Calendar
 
 object DateTimeUtils {
 
-    fun convertDateAndTimePickerTime(
+    fun getAlarmTimeInMillis(
         selectedDateInMillis: Long,
         selectedHour: Int,
         selectedMinute: Int
