@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Alarms</string>
     <string name="new_alarm">New Alarm</string>
+    <string name="alarm_icon_content_description_text">This is an alarm description icon.</string>
 </resources>

@@ -14,4 +14,11 @@
     <dimen name="recyclerview_vertical_padding">20dp</dimen>
     <dimen name="recyclerview_horizontal_padding">10dp</dimen>
 
+    <!--    Alarm RecyclerView Item Dimension -->
+    <dimen name="item_padding">15dp</dimen>
+    <dimen name="imageview_icon_sizes">30dp</dimen>
+    <dimen name="recyclerview_tv_element_margin">10dp</dimen>
+    <dimen name="recyclerview_item_date_text_size">15sp</dimen>
+    <dimen name="linearlayout_date_time_padding_horizontal">10dp</dimen>
+
 </resources>
