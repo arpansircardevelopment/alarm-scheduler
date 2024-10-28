@@ -5,5 +5,7 @@
 
     <string name="date_picker_dialog_tag">DatePicker Dialog</string>
     <string name="select_date">Select Date</string>
+    <string name="time_picker_dialog_tag">TimePicker Dialog</string>
+    <string name="select_time">Select Time</string>
 
 </resources>
