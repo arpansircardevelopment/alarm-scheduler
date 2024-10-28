@@ -7,25 +7,16 @@ import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 
-class DateTimePicker(
-    private val manager: FragmentManager,
-    private val context: Context
-) {
+class DateTimePicker(private val context: Context) {
 
-    fun showDatePicker() {
-        val picker = MaterialDatePicker.Builder
-            .datePicker()
-            .apply {
-                setTitleText(context.getString(R.string.select_date))
-                setCalendarConstraints(getDateConstraints())
-                setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-            }.build()
-
-        picker.show(
-            this@DateTimePicker.manager,
-            context.getString(R.string.date_picker_dialog_tag)
-        )
-    }
+    fun getDatePicker() = MaterialDatePicker.Builder
+        .datePicker()
+        .apply {
+            setTitleText(context.getString(R.string.select_date))
+            setCalendarConstraints(getDateConstraints())
+            setInputMode(MaterialDatePicker.INPUT_MODE_CALENDAR)
+            setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+        }.build()
 
     private fun getDateConstraints(): CalendarConstraints = CalendarConstraints
         .Builder()
