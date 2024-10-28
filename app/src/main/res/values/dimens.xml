@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    Heading Text View Dimensions -->
+    <dimen name="app_name_heading_text_size">20dp</dimen>
+    <dimen name="app_name_heading_padding">20dp</dimen>
+
+    <!--    Add New Alarm Button Dimensions-->
+    <dimen name="button_bottom_margin">20dp</dimen>
+    <dimen name="button_horizontal_margins">30dp</dimen>
+
+    <!--    All Alarms RecyclerView Dimensions -->
+    <dimen name="button_text_size">15sp</dimen>
+    <dimen name="recyclerview_vertical_padding">20dp</dimen>
+    <dimen name="recyclerview_horizontal_padding">10dp</dimen>
+
+</resources>
