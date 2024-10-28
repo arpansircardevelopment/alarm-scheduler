@@ -2,5 +2,8 @@
     <string name="app_name">Alarms</string>
     <string name="new_alarm">New Alarm</string>
     <string name="alarm_icon_content_description_text">This is an alarm description icon.</string>
+
     <string name="date_picker_dialog_tag">DatePicker Dialog</string>
+    <string name="select_date">Select Date</string>
+
 </resources>
