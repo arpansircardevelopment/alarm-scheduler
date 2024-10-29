@@ -15,7 +15,10 @@ interface AlarmDao {
     @Query("SELECT * FROM alarm")
     fun getAllAlarms(): Flow<List<Alarm>>
 
-    @Delete
-    suspend fun deleteAlarm(alarm: Alarm)
+    @Query("SELECT * FROM alarm WHERE alarm_date_time = :timeInMillis")
+    fun getAlarm(timeInMillis: Long): Alarm?
+
+    @Query("DELETE FROM alarm WHERE alarm_date_time = :timeInMillis")
+    suspend fun deleteAlarm(timeInMillis: Long)
 
 }
