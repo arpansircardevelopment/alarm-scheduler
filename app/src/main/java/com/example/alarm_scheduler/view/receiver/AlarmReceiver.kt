@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import com.example.alarm_scheduler.model.constants.Constants
 import com.example.alarm_scheduler.model.room.AlarmDatabase
+import com.example.alarm_scheduler.utils.AudioUtils
 import com.example.alarm_scheduler.utils.NotificationUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +17,8 @@ class AlarmReceiver : BroadcastReceiver() {
         val message: String = intent?.getStringExtra(Constants.ALARM_INTENT_TAG) ?: return
         val alarmId: Long = intent.getLongExtra(Constants.ALARM_ID_INTENT_TAG, -1) ?: return
         NotificationUtils.showNotification(context, message)
+
+        AudioUtils.playRingtone(context)
 
         CoroutineScope(Dispatchers.IO).launch {
             context?.let {

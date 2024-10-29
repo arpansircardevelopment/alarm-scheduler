@@ -23,4 +23,6 @@ class MainRepository(
 
     fun scheduleAlarm(alarm: Alarm) = scheduler.scheduleAlarm(alarm)
 
+    fun cancelAlarm(alarm: Alarm) = scheduler.cancelAlarm(alarm)
+
 }

@@ -46,4 +46,8 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
     fun scheduleAlarm(alarm: Alarm) {
         repository.scheduleAlarm(alarm)
     }
+
+    fun cancelAlarm(alarm: Alarm) {
+        repository.cancelAlarm(alarm)
+    }
 }

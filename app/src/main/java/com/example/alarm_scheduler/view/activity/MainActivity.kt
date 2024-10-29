@@ -174,5 +174,6 @@ class MainActivity : AppCompatActivity(), AlarmItemListener {
 
     override fun deleteAlarm(alarm: Alarm) {
         viewModel?.deleteAlarm(alarm.dateTime)
+        viewModel?.cancelAlarm(alarm)
     }
 }

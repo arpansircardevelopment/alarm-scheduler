@@ -33,6 +33,8 @@
 
         <receiver android:name=".view.receiver.AlarmReceiver" />
 
+        <receiver android:name=".view.receiver.DismissAlarmReceiver" />
+
     </application>
 
 </manifest>

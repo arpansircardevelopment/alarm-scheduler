@@ -11,5 +11,6 @@
     <string name="alarm_message">Alarm Time Reached</string>
     <string name="alarm_notification_title">"Alarm "</string>
     <string name="alarm_time_already_preset">Time mentioned for alarm has already been scheduled.</string>
+    <string name="dismiss">Dismiss</string>
 
 </resources>
